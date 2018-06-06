@@ -6,9 +6,11 @@ SOURCES += \
         main.cpp \
     token.cpp \
     interpreter.cpp \
-    syntaxerror.cpp
+    syntaxerror.cpp \
+    lexer.cpp
 
 HEADERS += \
     token.h \
     interpreter.h \
-    syntaxerror.h
+    syntaxerror.h \
+    lexer.h

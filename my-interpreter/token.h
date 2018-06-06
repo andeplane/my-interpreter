@@ -12,6 +12,8 @@ public:
         MINUS,
         MULT,
         DIV,
+        LPAREN,
+        RPAREN,
         TEOF
     };
 

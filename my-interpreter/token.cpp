@@ -23,6 +23,12 @@ QString Token::toString(Type type)
     if (type == Type::INTEGER) {
         return "INT";
     }
+    if (type == Type::LPAREN) {
+        return "(";
+    }
+    if (type == Type::RPAREN) {
+        return ")";
+    }
     if (type == Type::TEOF) {
         return "EOF";
     }

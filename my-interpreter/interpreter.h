@@ -1,28 +1,25 @@
 #ifndef INTERPRETER_H
 #define INTERPRETER_H
 
+#include "lexer.h"
 #include "token.h"
 #include <QString>
+#include <memory>
 
 class Interpreter {
 public:
-    Interpreter(QString text, bool debug = false);
+    Interpreter(std::shared_ptr<Lexer> lexer, bool debug = false);
     int expression();
-    bool m_debug;
 
 protected:
-    void skipWhitespace();
-    Token getNextToken();
-    void advance();
     void eat(Token::Type type);
-    int integer();
     int term();
+    int factor();
     void debug(QString message);
 
 private:
-    uint64_t m_pos;
-    QString m_text;
-    QChar m_currentChar;
+    std::shared_ptr<Lexer> m_lexer;
+    bool m_debug;
     Token m_currentToken;
 };
 
